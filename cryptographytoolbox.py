@@ -135,7 +135,7 @@ while True:
         
         
     elif choice == "4":
-            
+        
 
     elif choice == "6":
         text = input("Enter the text to encrypt/decrypt: ")
