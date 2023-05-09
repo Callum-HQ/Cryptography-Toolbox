@@ -42,6 +42,20 @@ def vigenere_cipher(text, key):
             result += text[i]
     return result
 
+def rot13_cipher(text):
+    return text.encode('rot13')
+
+
+def rot47_cipher(text):
+    result = ""
+    for char in text:
+        ascii_val = ord(char)
+        if 33 <= ascii_val <= 126:
+            result += chr(33 + ((ascii_val + 14) % 94))
+        else:
+            result += char
+    return result
+
 def aes_encrypt(key, data):
     f = Fernet(key)
     return f.encrypt(data.encode()).decode()
@@ -73,14 +87,19 @@ def rsa_decrypt(private_key, ciphertext):
     return plaintext.decode()
 
 def show_menu():
-    print("Select a cryptography technique:")
+    print("Welcome to the Cryptography Toolbox!")
+    print("Please select a cryptography technique:")
     print("-"*33)
     print("| 1. Caesar Cipher\t\t|")
     print("| 2. Substitution Cipher\t|")
     print("| 3. Vigenere Cipher\t\t|")
-    print("| 4. AES Encryption\t\t|")
-    print("| 5. RSA Encryption\t\t|")
-    print("| 6. Exit\t\t\t|")
+    
+    print("| 4. ROT13 Cipher")
+    print("| 5. ROT47 Cipher")
+    
+    print("| 6. AES Encryption\t\t|")
+    print("| 7. RSA Encryption\t\t|")
+    print("| 8. Exit\t\t\t|")
     print("-"*33)
 
 
@@ -114,14 +133,14 @@ while True:
         print("Encrypted text:", encrypted)
         print("Decrypted text:", decrypted)
         
-    elif choice == "4":
+    elif choice == "6":
         text = input("Enter the text to encrypt/decrypt: ")
         encrypted = aes_encrypt(key, text)
         decrypted = aes_decrypt(key, encrypted)
         print("Encrypted text:", encrypted)
         print("Decrypted text:", decrypted)
         
-    elif choice == "5":
+    elif choice == "7":
         private_key = rsa.generate_private_key(
             public_exponent=65537,
             key_size=2048
@@ -133,8 +152,8 @@ while True:
         print("Encrypted text:", encrypted)
         print("Decrypted text:", decrypted)
         
-    elif choice == "6":
+    elif choice == "8":
         break
         
     else:
-        print("Invalid choice. Please try again.")
+        print("Invalid number. Please try again.")
