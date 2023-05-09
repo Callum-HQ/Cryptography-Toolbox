@@ -94,8 +94,8 @@ def show_menu():
     print("| 2. Substitution Cipher\t|")
     print("| 3. Vigenere Cipher\t\t|")
     
-    print("| 4. ROT13 Cipher")
-    print("| 5. ROT47 Cipher")
+    print("| 4. ROT13 Cipher\t\t|")
+    print("| 5. ROT47 Cipher\t\t|")
     
     print("| 6. AES Encryption\t\t|")
     print("| 7. RSA Encryption\t\t|")
@@ -135,7 +135,14 @@ while True:
         
         
     elif choice == "4":
+        text = input("Enter the text to encrypt/decrypt: ")
+        result = rot13_cipher(text)
+        print(f"The result is: {result}\n")
         
+    elif choice == "5":
+        text = input("Enter the text to encrypt/decrypt: ")
+        result = rot47_cipher(text)
+        print(f"The result is: {result}\n")
 
     elif choice == "6":
         text = input("Enter the text to encrypt/decrypt: ")
