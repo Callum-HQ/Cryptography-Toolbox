@@ -133,6 +133,10 @@ while True:
         print("Encrypted text:", encrypted)
         print("Decrypted text:", decrypted)
         
+        
+    elif choice == "4":
+            
+
     elif choice == "6":
         text = input("Enter the text to encrypt/decrypt: ")
         encrypted = aes_encrypt(key, text)
