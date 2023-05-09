@@ -74,14 +74,14 @@ def rsa_decrypt(private_key, ciphertext):
 
 def show_menu():
     print("Select a cryptography technique:")
-    print("-"*20)
-    print("| 1. Caesar Cipher")
-    print("| 2. Substitution Cipher")
-    print("| 3. Vigenere Cipher")
-    print("| 4. AES Encryption")
-    print("| 5. RSA Encryption")
-    print("| 6. Exit")
-    print("-"*20)
+    print("-"*33)
+    print("| 1. Caesar Cipher\t\t|")
+    print("| 2. Substitution Cipher\t|")
+    print("| 3. Vigenere Cipher\t\t|")
+    print("| 4. AES Encryption\t\t|")
+    print("| 5. RSA Encryption\t\t|")
+    print("| 6. Exit\t\t\t|")
+    print("-"*33)
 
 
 key = b'Insert 32-byte secret key here'
